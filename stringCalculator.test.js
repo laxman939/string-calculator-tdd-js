@@ -58,3 +58,19 @@ describe("StringCalculator", () => {
     );
   });
 });
+
+describe("Edge cases", () => {
+  let calculator;
+  beforeEach(() => {
+    calculator = new StringCalculator();
+  });
+  test("should handle whitespace around numbers", () => {
+    expect(calculator.add(" 1, 2 ")).toBe(3);
+  });
+
+  test("should handle zero", () => {
+    expect(calculator.add("0")).toBe(0);
+    expect(calculator.add("1,0")).toBe(1);
+    expect(calculator.add("1,0,2")).toBe(3);
+  });
+});
