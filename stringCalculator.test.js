@@ -50,11 +50,11 @@ describe("StringCalculator", () => {
     expect(() => calculator.add("-2")).toThrow(
       "Negative numbers not allowed: -2"
     );
-    expect(() => calculator.add("-1,2")).toThrow(
-      "Negative numbers not allowed: -1,2"
-    );
-    expect(() => calculator.add("1,-2,3")).toThrow(
-      "Negative numbers not allowed: 1,-2,3"
+  });
+
+  test("should show all negative numbers in the error message", () => {
+    expect(() => calculator.add("1,-2,3,-4")).toThrow(
+      "Negative numbers not allowed: -2,-4"
     );
   });
 });

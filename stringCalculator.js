@@ -19,6 +19,16 @@ class StringCalculator {
     const numberArray = numberString
       .split(delimiter)
       .map((num) => parseInt(num, 10));
+
+    // Check for negative numbers
+    const negativeNumbers = numberArray.filter((num) => num < 0);
+    console.log(negativeNumbers);
+    if (negativeNumbers.length > 0) {
+      throw new Error(
+        "Negative numbers not allowed: " + negativeNumbers.join(",")
+      );
+    }
+
     return numberArray.reduce((sum, num) => sum + num, 0);
   }
 }
