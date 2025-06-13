@@ -3,7 +3,7 @@ class StringCalculator {
     if (numbers === "") {
       return 0;
     }
-    return parseInt(numbers, 10);
+    return parseInt(numbers, 10); // Convert string to integer
   }
 }
 
